@@ -1,0 +1,30 @@
+version: 2
+models:
+  - name: dim_country
+    description: One row per country (ISO 3166 alpha-3) with latest population
+    columns:
+      - name: iso_code
+        data_tests: [unique, not_null]
+  - name: fct_country_year
+    description: Country-year electricity mix, carbon intensity and emissions, 1990 onwards
+    data_tests:
+      - unique_combination: {arguments: {columns: [iso_code, year]}}
+    columns:
+      - name: iso_code
+        data_tests:
+          - not_null
+          - relationships: {arguments: {to: ref('dim_country'), field: iso_code}}
+  - name: mart_electricity_mix
+    description: Electricity generation by source in long format
+    data_tests:
+      - unique_combination: {arguments: {columns: [iso_code, year, source]}}
+    columns:
+      - name: share_pct
+        data_tests: [{accepted_range: {arguments: {min_value: 0, max_value: 100.5}}}]
+      - name: source_group
+        data_tests: [{accepted_values: {arguments: {values: ['fossil', 'nuclear', 'renewable']}}}]
+  - name: mart_decarbonisation
+    description: 2010 vs latest-year electricity decarbonisation league table (>= 10 TWh)
+    columns:
+      - name: iso_code
+        data_tests: [unique, not_null]

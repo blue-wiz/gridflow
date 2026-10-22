@@ -1,0 +1,67 @@
+{
+  "loads": [
+    {
+      "source": "owid_co2",
+      "n_rows": "50411",
+      "n_columns": "79",
+      "sha256": "7f78e2b218ce4bb8c538bbec04fdc9a7982e8d40bff972e650df603899edd5f6",
+      "loaded_at": "2026-10-22 07:42:45.300513+00:00"
+    },
+    {
+      "source": "owid_energy",
+      "n_rows": "23377",
+      "n_columns": "130",
+      "sha256": "266f2e2baad7975351bc9bb4aa061d22b1da9fe4c47d51d2ac6071e01e171f76",
+      "loaded_at": "2026-10-22 07:42:32.523278+00:00"
+    }
+  ],
+  "rows": {
+    "fct": 7696,
+    "countries": 220,
+    "mix": 52339,
+    "ranked": 108
+  },
+  "uk": {
+    "coal_share_1990_pct": 64.6,
+    "carbon_intensity_2010": 517.2,
+    "latest_year": 2025,
+    "carbon_intensity_latest": 217.41,
+    "low_carbon_share_latest": 64.418,
+    "low_carbon_share_2010": 23.117
+  },
+  "top5_decarbonisers": [
+    {
+      "country": "Denmark",
+      "low_carbon_share_2010": 32.077,
+      "low_carbon_share_latest": 89.19,
+      "low_carbon_change_pp": 57.1
+    },
+    {
+      "country": "United Kingdom",
+      "low_carbon_share_2010": 23.117,
+      "low_carbon_share_latest": 64.932,
+      "low_carbon_change_pp": 41.8
+    },
+    {
+      "country": "Netherlands",
+      "low_carbon_share_2010": 12.837,
+      "low_carbon_share_latest": 53.658,
+      "low_carbon_change_pp": 40.8
+    },
+    {
+      "country": "Finland",
+      "low_carbon_share_2010": 58.259,
+      "low_carbon_share_latest": 95.348,
+      "low_carbon_change_pp": 37.1
+    },
+    {
+      "country": "Belarus",
+      "low_carbon_share_2010": 0.401,
+      "low_carbon_share_latest": 37.32,
+      "low_carbon_change_pp": 36.9
+    }
+  ],
+  "uk_rank": 2,
+  "n_ranked": 108,
+  "latest_year": 2024
+}

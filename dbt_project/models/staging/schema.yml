@@ -1,0 +1,22 @@
+version: 2
+models:
+  - name: stg_owid_energy
+    description: Typed country-year energy data from the latest OWID energy file
+    data_tests:
+      - unique_combination: {arguments: {columns: [iso_code, year]}}
+    columns:
+      - name: iso_code
+        data_tests: [not_null]
+      - name: year
+        data_tests: [not_null, {accepted_range: {arguments: {min_value: 1900, max_value: 2100}}}]
+      - name: low_carbon_share_elec_pct
+        data_tests: [{accepted_range: {arguments: {min_value: 0, max_value: 100}}}]
+      - name: carbon_intensity_g_per_kwh
+        data_tests: [{accepted_range: {arguments: {min_value: 0, max_value: 1500}}}]
+  - name: stg_owid_co2
+    description: Typed country-year CO2 data from the latest OWID CO2 file
+    data_tests:
+      - unique_combination: {arguments: {columns: [iso_code, year]}}
+    columns:
+      - name: iso_code
+        data_tests: [not_null]

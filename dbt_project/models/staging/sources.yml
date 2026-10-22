@@ -1,0 +1,18 @@
+version: 2
+sources:
+  - name: raw
+    schema: raw
+    description: Files from Our World in Data, loaded as JSONB by scripts/extract_load.py
+    freshness:
+      warn_after: {count: 14, period: day}
+      error_after: {count: 45, period: day}
+    loaded_at_field: loaded_at
+    tables:
+      - name: load_log
+        description: One row per file version loaded (source, sha256, row count, load time)
+      - name: owid_energy
+        loaded_at_field: null
+        freshness: null
+      - name: owid_co2
+        loaded_at_field: null
+        freshness: null

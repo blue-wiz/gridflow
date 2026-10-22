@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+.venv/
+dbt_project/target/
+dbt_project/logs/
+logs/
+*.pyc
+.DS_Store
