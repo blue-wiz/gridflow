@@ -1,5 +1,7 @@
 # GridFlow — a tested, scheduled ELT pipeline for global energy data
 
+[![GridFlow pipeline](https://github.com/blue-wiz/gridflow/actions/workflows/pipeline.yml/badge.svg)](https://github.com/blue-wiz/gridflow/actions/workflows/pipeline.yml)
+
 GridFlow loads the **Our World in Data** energy and CO₂ datasets every week. OWID compiles them from sources including the Energy Institute, Ember and the Global Carbon Project. It models them with **dbt** in PostgreSQL, tests every layer and publishes analysis-ready tables. One command runs it locally; GitHub Actions runs it on a schedule.
 
 ![UK electricity mix](reports/figures/uk_mix.png)
